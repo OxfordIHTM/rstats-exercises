@@ -13,7 +13,7 @@ are illustrative of various approaches useful in most data projects.
 For each exercise, the learner is expected to create either an R script
 or an R Markdown document to perform the tasks requested.
 
-## Statistical methods for assessing agreement between two methods of clinical measurement
+## Exercise 1: Statistical methods for assessing agreement between two methods of clinical measurement
 
 This exercise is based on:
 
@@ -66,7 +66,7 @@ For this exercise, use the R script and/or R Markdown titled
     3.  A short discussion of the findings with regard to the agreement
         between the **Wright** and **Mini-Wright** tools.
 
-## Performing tests for correlations and associations between variables
+## Exercise 2: Performing tests for correlations and associations between variables
 
 This exercise uses the `fem.dat` dataset accessible from the
 `teaching_datasets` repository. The URL to the `.dat` file is
@@ -119,13 +119,49 @@ For this exercise, use the R script and/or R Markdown titled
         years (`AGE`), and IQ (`IQ`);
 
     3.  Odds ratio of considering suicide and anxiety and odds ratio of
-        considering suicde and depression; and,
+        considering suicde and depression;
 
     4.  Results of logstic regression model for considering suicide with
         depression (`DEP`), anxiety (`ANX`), abnormal sleep (`SLP`), and
-        loss of interest in sex (`SEX`).
+        loss of interest in sex (`SEX`); and,
 
-## Performing text mining and topic modelling
+    5.  A short discussion of the findings.
+
+## Exercise 3: Time series plotting and analysis
+
+This exercise uses the `malaria.dat` dataset accessible from the
+`teaching_datasets` repository. The URL to the `.dat` file is
+<https://raw.githubusercontent.com/OxfordIHTM/teaching_datasets/main/malaria.dat>.
+The `malaria.dat` dataset contains data on rainfall (in mm) and the
+number of cases of malaria reported from health centres in an
+administrative district of Ethiopia between July 1997 and July 1999
+
+For this exercise, use the R script and/or R Markdown titled
+`exercise4`.
+
+### Tasks
+
+1.  Show the trend of malaria cases over time in this administrative
+    district of Ethiopia;
+
+2.  Show the trend of amount of rainfall over time in this
+    administrative district of Ethiopia;
+
+3.  Specify a linear model between malaria cases and amount of rainfall;
+    and,
+
+4.  Create a short report that shows
+
+    1.  A plot of the trend of malaria cases over time;
+
+    2.  A plot of the trend of amount of rainfall over time overlaid
+        onto the malaria cases plot;
+
+    3.  Results of the linear model of malaria cases and rainfall; and,
+
+    4.  A short discussion of the findings.
+
+## Exercise 4: Performing text mining and topic modelling
 
 This exercise uses the text data on COVID-related resolutions issued
 from 28 January 2020 to 30 July 2020 by the Inter-Agency Task Force for
@@ -156,7 +192,7 @@ iatf_data <- combine_iatf()
 ```
 
 For this exercise, use the R script and/or R Markdown titled
-`exercise3`.
+`exercise4`.
 
 ### Tasks
 
@@ -175,7 +211,9 @@ For this exercise, use the R script and/or R Markdown titled
 
     1.  various relevant plots of sentiment trend over time;
 
-    2.  various relevant plots and tables showing term frequency; and,
+    2.  various relevant plots and tables showing term frequency;
 
     3.  various relevant plots and tables showing topics modelled from
-        the resolutions.
+        the resolutions; and,
+
+    4.  A short discussion of the findings.
