@@ -14,6 +14,7 @@ knitr::opts_chunk$set(
 # Data Analysis and Visualisation Exercises Using R
 
 <!-- badges: start -->
+[![check workflow](https://github.com/OxfordIHTM/rstats-exercises/actions/workflows/check-workflow.yml/badge.svg)](https://github.com/OxfordIHTM/rstats-exercises/actions/workflows/check-workflow.yml)
 <!-- badges: end -->
 
 The following exercises are aimed at aiding the learner use R for performing some types of data analysis and visualisation techniques that are illustrative of various approaches useful in most data projects.

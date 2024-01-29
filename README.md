@@ -4,6 +4,9 @@
 # Data Analysis and Visualisation Exercises Using R
 
 <!-- badges: start -->
+
+[![check
+workflow](https://github.com/OxfordIHTM/rstats-exercises/actions/workflows/check-workflow.yml/badge.svg)](https://github.com/OxfordIHTM/rstats-exercises/actions/workflows/check-workflow.yml)
 <!-- badges: end -->
 
 The following exercises are aimed at aiding the learner use R for
