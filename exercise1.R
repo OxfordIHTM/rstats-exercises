@@ -10,3 +10,5 @@ calculate_diff <- function(x,y){
   diff
 }
 ba$diff <- calculate_diff(ba$Wright,ba$Mini)
+ba$diffmean <- mean(ba$diff)
+?mean
