@@ -41,17 +41,17 @@ For this exercise, use the R script and/or R Markdown titled
     by the **Bland and Altman plot** as described in the article
     referenced above:
 
-    1.  Mean of the per subject measurements made by the **Wright** and
-        the **Mini-Wright**;
+    1.  Mean of the per subject measurements made by the Wright and the
+        Mini-Wright;
 
     2.  Difference between the per subject measurements made by the
-        **Wright** and the **Mini-Wright**;
+        Wright and the Mini-Wright;
 
     3.  Mean of the difference between the per subject measurements made
-        by the **Wright** and the **Mini-Wright**; and,
+        by the Wright and the Mini-Wright; and,
 
     4.  Lower and upper limits of agreement between the per subject
-        measurements made by the **Wright** and the **Mini-Wright**.
+        measurements made by the Wright and the Mini-Wright.
 
 3.  Develop a function that creates a **Bland and Altman plot** as
     described in the article.
@@ -59,12 +59,12 @@ For this exercise, use the R script and/or R Markdown titled
 4.  Create a short report that shows
 
     1.  A table of the mean and difference of per subject measurements
-        made by the **Wright** and the **Mini-Wright**;
+        made by the Wright and the Mini-Wright;
 
     2.  A **Bland and Altman plot**; and,
 
     3.  A short discussion of the findings with regard to the agreement
-        between the **Wright** and **Mini-Wright** tools.
+        between the Wright and Mini-Wright tools.
 
 ## Exercise 2: Performing tests for correlations and associations between variables
 
