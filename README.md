@@ -53,7 +53,7 @@ For this exercise, use the R script and/or R Markdown titled
     4.  Lower and upper limits of agreement between the per subject
         measurements made by the **Wright** and the **Mini-Wright**.
 
-3.  Create a function that creates a **Bland and Altman plot** as
+3.  Develop a function that creates a **Bland and Altman plot** as
     described in the article.
 
 4.  Create a short report that shows
