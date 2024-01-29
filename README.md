@@ -144,16 +144,18 @@ For this exercise, use the R script and/or R Markdown titled
 
 ### Tasks
 
-1.  Show the trend of malaria cases over time in this administrative
+1.  Read the `malaria.dat` dataset from the GitHub URL given above;
+
+2.  Show the trend of malaria cases over time in this administrative
     district of Ethiopia;
 
-2.  Show the trend of amount of rainfall over time in this
+3.  Show the trend of amount of rainfall over time in this
     administrative district of Ethiopia;
 
-3.  Specify a linear model between malaria cases and amount of rainfall;
+4.  Specify a linear model between malaria cases and amount of rainfall;
     and,
 
-4.  Create a short report that shows
+5.  Create a short report that shows
 
     1.  A plot of the trend of malaria cases over time;
 

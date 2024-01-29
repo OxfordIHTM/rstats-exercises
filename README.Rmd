@@ -88,9 +88,9 @@ For this exercise, use the R script and/or R Markdown titled `exercise2`.
 
 4. Calculate the odds ratio of someone with any form of anxiety considering suicide and calculate the odds ratio of someone with any for of depression considering suicide;
 
-6. Specify a logistic regression model that looks into the correlation/association of considering suicide (`LIFE`) with depression (`DEP`), anxiety (`ANX`), abnormal sleep (`SLP`), and loss of interest in sex (`SEX`); and,
+5. Specify a logistic regression model that looks into the correlation/association of considering suicide (`LIFE`) with depression (`DEP`), anxiety (`ANX`), abnormal sleep (`SLP`), and loss of interest in sex (`SEX`); and,
 
-7. Create a short report that shows
+6. Create a short report that shows
 
     a. A tabular and graphical summary of the `AGE`, `IQ`, and `WT` variables;
     
@@ -111,13 +111,15 @@ For this exercise, use the R script and/or R Markdown titled `exercise4`.
 
 ### Tasks
 
-1. Show the trend of malaria cases over time in this administrative district of Ethiopia;
+1. Read the `malaria.dat` dataset from the GitHub URL given above;
 
-2. Show the trend of amount of rainfall over time in this administrative district of Ethiopia;
+2. Show the trend of malaria cases over time in this administrative district of Ethiopia;
 
-3. Specify a linear model between malaria cases and amount of rainfall; and,
+3. Show the trend of amount of rainfall over time in this administrative district of Ethiopia;
 
-3. Create a short report that shows
+4. Specify a linear model between malaria cases and amount of rainfall; and,
+
+5. Create a short report that shows
 
     a. A plot of the trend of malaria cases over time;
     
