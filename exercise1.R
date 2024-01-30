@@ -21,9 +21,11 @@ limit_multiplier <- 1.96
 lower_limit = mean_difference - (limit_multiplier * sd_difference)
 upper_limit = mean_difference + (limit_multiplier * sd_difference)
 
-return(c(lower_limit,upper_limit))
+return(list(mean_difference,differences,lower_limit,upper_limit))
 }
 
-conf_interval <- calculate_limits_of_agreement(ba$Wright, ba$Mini)
+value_list <- calculate_limits_of_agreement(ba$Wright, ba$Mini)
+
+
 
 
