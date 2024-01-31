@@ -74,7 +74,7 @@ For this exercise, use the R script and/or R Markdown titled
 This exercise uses the `fem.dat` dataset accessible from the
 `teaching_datasets` repository. The URL to the `.dat` file is
 <https://raw.githubusercontent.com/OxfordIHTM/teaching_datasets/main/fem.dat>.
-The `fem.dat` dataset is from 118 female pyschiatric patients.
+The `fem.dat` dataset is from 118 female psychiatric patients.
 
 The variables in the dataset are:
 
@@ -140,7 +140,7 @@ number of cases of malaria reported from health centres in an
 administrative district of Ethiopia between July 1997 and July 1999
 
 For this exercise, use the R script and/or R Markdown titled
-`exercise4`.
+`exercise3`.
 
 ### Tasks
 

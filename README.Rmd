@@ -60,7 +60,7 @@ For this exercise, use the R script and/or R Markdown titled `exercise1`.
 
 ## Exercise 2:  Performing tests for correlations and associations between variables
 
-This exercise uses the `fem.dat` dataset accessible from the `teaching_datasets` repository. The URL to the `.dat` file is https://raw.githubusercontent.com/OxfordIHTM/teaching_datasets/main/fem.dat. The `fem.dat` dataset is from 118 female pyschiatric patients.
+This exercise uses the `fem.dat` dataset accessible from the `teaching_datasets` repository. The URL to the `.dat` file is https://raw.githubusercontent.com/OxfordIHTM/teaching_datasets/main/fem.dat. The `fem.dat` dataset is from 118 female psychiatric patients.
 
 The variables in the dataset are:
 
@@ -107,7 +107,7 @@ For this exercise, use the R script and/or R Markdown titled `exercise2`.
 
 This exercise uses the `malaria.dat` dataset accessible from the `teaching_datasets` repository. The URL to the `.dat` file is https://raw.githubusercontent.com/OxfordIHTM/teaching_datasets/main/malaria.dat. The `malaria.dat` dataset contains data on rainfall (in mm) and the number of cases of malaria reported from health centres in an administrative district of Ethiopia between July 1997 and July 1999
 
-For this exercise, use the R script and/or R Markdown titled `exercise4`.
+For this exercise, use the R script and/or R Markdown titled `exercise3`.
 
 ### Tasks
 
