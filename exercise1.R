@@ -1,5 +1,17 @@
 ba = read.table("https://raw.githubusercontent.com/OxfordIHTM/teaching_datasets/main/ba.dat",header=TRUE)
 
+BandA =function(W,M){
+  meanD=mean(abs(W-M))
+  SDD=sd(abs(W-M))
+  L=meanD-1.96*SDD
+  U=meanD+1.96*SDD
+  
+  return (list(meanD,L,U))
+   
+}
+
+H = BandA(ba$Wright,ba$Mini)
+
 ##mean difference 
 differences <- ba$Wright - ba$Mini
 mean_difference <- mean(differences)
@@ -25,7 +37,4 @@ return(list(mean_difference,differences,lower_limit,upper_limit))
 }
 
 value_list <- calculate_limits_of_agreement(ba$Wright, ba$Mini)
-
-
-
 
