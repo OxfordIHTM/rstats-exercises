@@ -1,0 +1,60 @@
+name: check exercise 1
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+    branches:
+      - '*'
+
+jobs:
+  check-exercise-1:
+    runs-on: ubuntu-latest
+    container: rocker/tidyverse:4.3.2
+    env:
+      GITHUB_PAT: ${{ secrets.GH_PAT }}
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Install system dependencies
+        run: |
+          apt-get update && apt-get install -y --no-install-recommends \
+          git-crypt libxt6 libglpk-dev
+        
+      - name: Install R packages
+        run: |
+          install.packages(c("rmarkdown", "openxlsx", "stringr", "remotes"))
+        shell: Rscript {0}
+        
+      - name: Install packages from GitHub
+        run: |
+          remotes::install_github("como-ph/covidphtext")
+        shell: Rscript {0}
+        
+      - name: Check that R file/s exist/s
+        run: |
+          testthat::test_that("R file exists",
+            testthat::expect_true(
+              length(list.files(pattern = "\\.R$|\\.r$")) > 0
+            )
+          )
+        shell: Rscript {0}
+      
+      - name: Check that exercise1.R file runs without errors
+        run: |
+          source("exercise1.R")
+        shell: Rscript {0}
+          
+      - name: Check that exercise1.Rmd file runs without errors
+        run: |
+          rmarkdown::render("exercise1.Rmd")
+        shell: Rscript {0}
+        
+      - name: Upload Rmarkdown reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: rmd-output
+          path: ./*.html
+          
