@@ -1,30 +1,12 @@
-#Install tidyverse packages for this activity
-
-install.packages("tidyverse")
-install.packages("ggthemes")
-library(tidyverse)
-library(ggthemes)
 
 #Load malaria data Rstudio
 
 malaria_data <- read.table("https://raw.githubusercontent.com/OxfordIHTM/teaching_datasets/main/malaria.dat",header=TRUE)
 
-#View malaria data
+plot(malaria_data$Cases,type="l")
 
-malaria_data
+plot(as.factor(malaria_data$Time),malaria_data$Cases,type="l")
 
-#Assign time and cases as per the data
+cases.ts <- ts(malaria_data$Cases,start=c(1997,7),frequency=12)
 
-time <- malaria_data$Time
-
-cases <- malaria_data$Cases
-
-rain <- malaria_data$Rain
-
-#plot malaria cases over time and labels
-
-ggplot(malaria_data, aes(x= time, y= cases)) +geom_point() +labs(title="Malaria Cases Over Time")
-
-#plot amount of rain over time and adding labels
-
-ggplot(malaria_data, aes(x=time, y= rain)) +geom_point(color="red") +labs(title="Amount of Rain over Time",x="Time", y= "Rain")
+plot(cases.ts)
