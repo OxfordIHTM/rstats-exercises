@@ -26,6 +26,11 @@ jobs:
           install.packages(c("rmarkdown", "openxlsx", "stringr", "remotes"))
         shell: Rscript {0}
         
+      - name: Install packages from GitHub
+        run: |
+          remotes::install_github("como-ph/covidphtext")
+        shell: Rscript {0}
+        
       - name: Check that R file/s exist/s
         run: |
           testthat::test_that("R file exists",
