@@ -1,5 +1,11 @@
 ---
-output: github_document
+title: "Performing tests for correlations and associations between variables"
+author: "Oxford IHTM Class 2024"
+date: "`r Sys.Date()`"
+output: 
+  rmarkdown::html_document:
+    toc: true
+    keep_md: true
 ---
 
 ```{r, include = FALSE}
