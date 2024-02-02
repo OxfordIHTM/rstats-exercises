@@ -13,6 +13,8 @@ jobs:
   check-workflow:
     runs-on: ubuntu-latest
     container: rocker/tidyverse:4.3.2
+    env:
+      GITHUB_PAT: ${{ secrets.GH_PAT }}
     steps:
       - uses: actions/checkout@v3
       
@@ -24,6 +26,11 @@ jobs:
       - name: Install R packages
         run: |
           install.packages(c("rmarkdown", "openxlsx", "stringr", "remotes"))
+        shell: Rscript {0}
+        
+      - name: Install packages from GitHub
+        run: |
+          remotes::install_github("como-ph/covidphtext")
         shell: Rscript {0}
         
       - name: Check that R file/s exist/s
