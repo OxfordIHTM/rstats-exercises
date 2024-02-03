@@ -10,3 +10,9 @@ plot(as.factor(malaria_data$Time),malaria_data$Cases,type="l")
 cases.ts <- ts(malaria_data$Cases,start=c(1997,7),frequency=12)
 
 plot(cases.ts)
+
+plot(malaria_data$Rain,type="l")
+
+rain.ts <- ts(malaria_data$Rain,start=c(1997,7),frequency=12)
+
+plot(rain.ts)
