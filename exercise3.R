@@ -16,3 +16,11 @@ plot(malaria_data$Rain,type="l")
 rain.ts <- ts(malaria_data$Rain,start=c(1997,7),frequency=12)
 
 plot(rain.ts)
+
+#Decompose cases
+cases_decomp <- decompose(cases.ts)
+plot(cases_decomp)
+
+#Decompose rainfall
+rain_decomp <- decompose(rain.ts)
+plot(rain_decomp)
