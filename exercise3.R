@@ -24,3 +24,11 @@ plot(cases_decomp)
 #Decompose rainfall
 rain_decomp <- decompose(rain.ts)
 plot(rain_decomp)
+
+#Trend component for cases over time
+trend_component_cases <- cases_decomp$trend
+plot(trend_component_cases)
+
+#Trend component for rain over time
+trend_component_rain <- rain_decomp$trend
+plot(trend_component_rain)
