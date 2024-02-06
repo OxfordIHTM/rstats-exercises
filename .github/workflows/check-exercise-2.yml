@@ -1,4 +1,4 @@
-name: check workflow
+name: check exercise 2
 
 on:
   push:
@@ -10,7 +10,7 @@ on:
       - '*'
 
 jobs:
-  check-workflow:
+  check-exercise-2:
     runs-on: ubuntu-latest
     container: rocker/tidyverse:4.3.2
     env:
@@ -32,34 +32,15 @@ jobs:
         run: |
           remotes::install_github("como-ph/covidphtext")
         shell: Rscript {0}
-        
-      - name: Check that R file/s exist/s
-        run: |
-          testthat::test_that("R file exists",
-            testthat::expect_true(
-              length(list.files(pattern = "\\.R$|\\.r$")) > 0
-            )
-          )
-        shell: Rscript {0}
       
-      - name: Check that R file runs without errors
+      - name: Check that exercise2.R file runs without errors
         run: |
-          lapply(
-            X = list.files(pattern = "\\.R$|\\.r$"),
-            FUN = source
-          )
+          source("exercise2.R")
         shell: Rscript {0}
           
-      - name: Check that Rmd file runs without errors
+      - name: Check that exercise2.Rmd file runs without errors
         run: |
-          rmds <- list.files(pattern = "\\.Rmd$") |>
-            (\(x) x[!stringr::str_detect(string = x, pattern = "README")])()
-          if (length(rmds) != 0) {
-            lapply(
-              X = rmds,
-              FUN = rmarkdown::render
-            )
-          }
+          rmarkdown::render("exercise2.Rmd")
         shell: Rscript {0}
         
       - name: Upload Rmarkdown reports

@@ -1,4 +1,5 @@
 ba = read.table("https://raw.githubusercontent.com/OxfordIHTM/teaching_datasets/main/ba.dat",header=TRUE)
+
 meanW= mean(ba$Wright)
 
 calculate_bland_altman <- function(wright_measurements, miniwright_measurements) {
@@ -24,16 +25,34 @@ calculate_bland_altman <- function(wright_measurements, miniwright_measurements)
   return(results)
 }
 
-# Example usage:
-wright_measurements <- c(20, 22, 24, 18, 21)
-miniwright_measurements <- c(19, 21, 23, 17, 20)
+BandA =function(W,M){
+  meanD=mean(abs(W-M))
+  SDD=sd(abs(W-M))
+  L=meanD-1.96*SDD
+  U=meanD+1.96*SDD
+  
+  return (list(meanD,L,U))
+   
+}
 
-bland_altman_results <- calculate_bland_altman(wright_measurements, miniwright_measurements)
+calculate_limits_of_agreement <- function(wright, mini){
+  
+##difference of per subject measurements
+differences <- wright - mini
 
-# Access the results
-print(bland_altman_results$mean_measurement)
-print(bland_altman_results$difference)
-print(bland_altman_results$mean_difference)
-print(bland_altman_results$lower_limit)
-print(bland_altman_results$upper_limit)
+##calculate mean difference
+mean_difference <- mean(differences)
+
+##calculate sd of difference
+sd_difference <- sd(differences)
+
+limit_multiplier <- 1.96
+
+
+lower_limit = mean_difference - (limit_multiplier * sd_difference)
+upper_limit = mean_difference + (limit_multiplier * sd_difference)
+
+return(list(mean_difference,differences,lower_limit,upper_limit))
+}
+
 

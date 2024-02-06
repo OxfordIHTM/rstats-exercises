@@ -74,7 +74,7 @@ For this exercise, use the R script and/or R Markdown titled
 This exercise uses the `fem.dat` dataset accessible from the
 `teaching_datasets` repository. The URL to the `.dat` file is
 <https://raw.githubusercontent.com/OxfordIHTM/teaching_datasets/main/fem.dat>.
-The `fem.dat` dataset is from 118 female pyschiatric patients.
+The `fem.dat` dataset is from 118 female psychiatric patients.
 
 The variables in the dataset are:
 
@@ -140,27 +140,33 @@ number of cases of malaria reported from health centres in an
 administrative district of Ethiopia between July 1997 and July 1999
 
 For this exercise, use the R script and/or R Markdown titled
-`exercise4`.
+`exercise3`.
 
 ### Tasks
 
-1.  Show the trend of malaria cases over time in this administrative
-    district of Ethiopia;
+1.  Read the `malaria.dat` dataset from the GitHub URL given above;
 
-2.  Show the trend of amount of rainfall over time in this
-    administrative district of Ethiopia;
+2.  Plot malaria cases over time and amount of rainfall over time in
+    this administrative district of Ethiopia;
 
-3.  Specify a linear model between malaria cases and amount of rainfall;
-    and,
+3.  Decompose the malaria cases and amount of rainfall time series into
+    its **trend component**, **irregular component**, and **seasonal
+    component**;
 
-4.  Create a short report that shows
+4.  Adjust the malaria cases and amount of rainfall time series for
+    seasonality; and,
 
-    1.  A plot of the trend of malaria cases over time;
+5.  Create a short report that shows
 
-    2.  A plot of the trend of amount of rainfall over time overlaid
-        onto the malaria cases plot;
+    1.  A plot of the malaria cases and amount of rainfall over time
+        overload on top of the other;
 
-    3.  Results of the linear model of malaria cases and rainfall; and,
+    2.  A table and plot of the trend component, seasonal component, and
+        irregular/random component of the malaria cases and amount of
+        rainfal time series;
+
+    3.  A table and plot of the seasonally adjusted time series for
+        malaria cases and amount of rainfall; and,
 
     4.  A short discussion of the findings.
 
@@ -199,18 +205,20 @@ For this exercise, use the R script and/or R Markdown titled
 
 ### Tasks
 
-1.  What is the general trend of sentiments expressed in the various
+1.  Load the IATF resolutions text data as describe above;
+
+2.  What is the general trend of sentiments expressed in the various
     resolutions over time?
 
-2.  What are the most common words (by sentiment) used in the various
+3.  What are the most common words (by sentiment) used in the various
     resolutions?
 
-3.  What general themes can be elicited from the various resolutions in
+4.  What general themes can be elicited from the various resolutions in
     the dataset? How do these themes relate to the general approach
     taken by the Philippine government nationally to manage the COVID-19
     pandemic?
 
-4.  Create a short report that shows
+5.  Create a short report that shows
 
     1.  various relevant plots of sentiment trend over time;
 
