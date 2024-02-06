@@ -1,5 +1,11 @@
 ---
-output: github_document
+title: "Statistical methods for assessing agreement between two methods of clinical measurement"
+author: "Oxford IHTM Class 2024"
+date: "`r Sys.Date()`"
+output: 
+  rmarkdown::html_document:
+    toc: true
+    keep_md: true
 ---
 
 ```{r, include = FALSE}
