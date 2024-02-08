@@ -1,5 +1,15 @@
+# Methods for assessing agreement between two methods of clinical measurement ----
+
+## Load package dependencies ----
+
+
+## Read data ----
 ba = read.table("https://raw.githubusercontent.com/OxfordIHTM/teaching_datasets/main/ba.dat",header=TRUE)
 
+
+## Create function/s for calculating Bland and Altman metrics ----
+
+### BandA function from @marianortt ----
 BandA =function(W,M){
   meanD=mean(abs(W-M))
   SDD=sd(abs(W-M))
@@ -10,11 +20,11 @@ BandA =function(W,M){
    
 }
 
+### Test BandA function ----
 H = BandA(ba$Wright,ba$Mini)
 
-##mean difference 
-differences <- ba$Wright - ba$Mini
-mean_difference <- mean(differences)
+
+### Function from @clicoselis ----
 
 calculate_limits_of_agreement <- function(wright, mini){
   
@@ -36,5 +46,6 @@ upper_limit = mean_difference + (limit_multiplier * sd_difference)
 return(list(mean_difference,differences,lower_limit,upper_limit))
 }
 
+### Test the function ----
 value_list <- calculate_limits_of_agreement(ba$Wright, ba$Mini)
 
