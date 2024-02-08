@@ -1,16 +1,19 @@
-#Time series analysis in R ----
-##load library
+# Time series plotting and analysis --------------------------------------------
+
+## Load package dependencies ----
 library(ggplot2)
 library(dplyr)
 library(tidyr)
 
-##Load malaria data Rstudio ----
 
+## Load malaria data ----
 malaria_data <- read.table("https://raw.githubusercontent.com/OxfordIHTM/teaching_datasets/main/malaria.dat",header=TRUE)
 
+
+## Exploratory data analysis ----
 plot(malaria_data$Cases,type="l")
 
-##Convert time variable into factor ----
+### Convert time variable into factor ----
 malaria_data$Time <- factor(malaria_data$Time,levels=malaria_data$Time)
 
 plot(malaria_data[,c("Time","Cases")],type="l")
@@ -25,31 +28,31 @@ rain.ts <- ts(malaria_data$Rain,start=c(1997,7),frequency=12)
 
 plot(rain.ts)
 
-###Combined cases and rain over time ----
+### Combined cases and rain over time ----
 cases.rain.ts <- ts(cbind(malaria_data$Cases,malaria_data$Rain),start=c(1997,7),frequency=12)
 plot(cases.rain.ts)
 
-#Decompose cases
+### Decompose cases ----
 cases_decomp <- decompose(cases.ts)
 plot(cases_decomp)
 
-#Decompose rainfall
+### Decompose rainfall ----
 rain_decomp <- decompose(rain.ts)
 plot(rain_decomp)
 
-#Trend component for cases over time
+### Trend component for cases over time ----
 trend_component_cases <- cases_decomp$trend
 plot(trend_component_cases)
 
-#Trend component for rain over time
+### Trend component for rain over time ----
 trend_component_rain <- rain_decomp$trend
 plot(trend_component_rain)
 
-### Removal seasonal from trend
+### Removal seasonal from trend ----
 cases_adjusted <- cases_decomp$x - cases_decomp$seasonal
 plot(cases_adjusted)
 
-## Plot time series with ggplot
+### Plot time series with ggplot ----
 
 malaria_data %>%
   pivot_longer(Cases:Rain,names_to = "var",values_to = "n")%>%
