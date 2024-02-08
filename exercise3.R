@@ -5,7 +5,6 @@
 
 
 ## Load malaria data ----
-
 malaria_data <- read.table("https://raw.githubusercontent.com/OxfordIHTM/teaching_datasets/main/malaria.dat",header=TRUE)
 
 
