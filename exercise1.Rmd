@@ -13,4 +13,29 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
+
+library(tidyverse)
 ```
+
+```{r}
+# Read the ba.dat dataset from the GitHub URL provided
+ba_data <- read.table(file="https://raw.githubusercontent.com/OxfordIHTM/teaching_datasets/main/ba.dat", header=T, sep=" ")
+
+# create function for Mean of the per subject measurements
+calculate_mean <- function(x,y) {
+  avrg = (x+y)/2
+  avrg
+}
+ba_data$mean <- calculate_mean(ba_data$Wright,ba_data$Mini)
+
+# create function for Difference between the per subject measurements
+calculate_difference <- function(x,y) {
+  diff = x-y
+  diff
+}
+ba_data$difference <- calculate_difference(ba_data$Wright,ba_data$Mini)
+
+# create function for Mean of the difference between the per subject measurements
+
+```
+

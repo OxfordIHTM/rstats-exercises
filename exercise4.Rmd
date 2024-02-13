@@ -8,9 +8,87 @@ output:
     keep_md: true
 ---
 
-```{r, include = FALSE}
+## Exercise 4: Performing text mining and topic modelling
+```{r setup, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
+
+## install packages
+#remotes::install_github("como-ph/covidphtext")
+#install.packages("tidytext")
+
+## load packages
+library(covidphtext)
+library(tidytext)
+library(tidyverse)
+
+## access the dataset
+iatf_data <- combine_iatf()
 ```
+
+
+```{r data prep, include=FALSE}
+## restructure in one-word-per-row format
+tidy_iatf_data <- iatf_data %>%
+  unnest_tokens(word, text)
+
+## remove stop words
+data(stop_words)
+
+tidy_iatf_data1 <- tidy_iatf_data %>%
+  anti_join(stop_words)
+
+## find most common words
+tidy_iatf_data1 %>%
+  count(word, sort = TRUE)
+
+get_sentiments("bing")
+```
+
+### What is the general trend of sentiments expressed in the various resolutions over time?
+```{r}
+## summarize sentiments by date
+iatf_sentiment <- tidy_iatf_data1 %>%
+  inner_join(get_sentiments("bing")) %>% #get sentiments
+  count(date, sentiment) #group by date and count sentiments
+
+## plot general trend of sentiments over time
+sentiment_trend <- ggplot(iatf_sentiment, aes(x=date, y=n, color=sentiment))+
+  geom_line(stat = "identity", linewidth=1)+
+  theme_bw()+
+  labs( y="Frequency", title="Graph showing general trend of sentiments", x="Date", fill="Sentiment")+
+  scale_color_manual(values = c("#f46d43","#74add1"))+
+  scale_x_date(date_breaks="1 month", date_labels = "%b-%y")+
+  theme(text=element_text(size=16, face = "bold"))
+sentiment_trend
+```
+
+
+### What are the most common words (by sentiment) used in the various resolutions?
+```{r}
+iatf_sentiment1 <- tidy_iatf_data1 %>%
+  inner_join(get_sentiments("bing")) %>% #get sentiments
+  count(word, sentiment) %>% #count common words per sentiments
+  group_by(sentiment) %>%
+  arrange(desc(n)) %>% 
+  slice(1:10) #show top 10 frequent words for each sentiment
+
+# plot common words by sentiment
+word_sentiment <- ggplot(iatf_sentiment1, aes(x=word, y=n, fill=sentiment))+
+  geom_bar(stat = "identity")+
+  facet_grid(~sentiment)+
+  theme_bw()+
+  labs( y="Frequency", title="", x="word", fill="")+
+  scale_fill_manual(values = c("#74add1","#f46d43"))+
+  theme(text=element_text(size=16, face = "bold"))+
+  coord_flip()
+word_sentiment
+```
+
+### What general themes can be elicited from the various resolutions in the dataset?
+```{r}
+
+```
+
