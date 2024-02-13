@@ -26,7 +26,8 @@ jobs:
       - name: Install R packages
         run: |
           install.packages(
-            c("rmarkdown", "openxlsx", "stringr", "remotes", "gtsummary")
+            c("rmarkdown", "openxlsx", "stringr", "remotes", "gtsummary",
+            "tidytext")
           )
         shell: Rscript {0}
         
