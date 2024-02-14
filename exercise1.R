@@ -6,10 +6,10 @@
 ## Read data ----
 ba = read.table("https://raw.githubusercontent.com/OxfordIHTM/teaching_datasets/main/ba.dat",header=TRUE)
 
-
 ## Create function/s for calculating Bland and Altman metrics ----
 
 ### BandA function from @marianortt ----
+
 BandA =function(W,M){
   meanD=mean(abs(W-M))
   SDD=sd(abs(W-M))
@@ -48,4 +48,30 @@ return(list(mean_difference,differences,lower_limit,upper_limit))
 
 ### Test the function ----
 value_list <- calculate_limits_of_agreement(ba$Wright, ba$Mini)
+
+
+### Function from @RasikaBombatkar
+
+calculate_bland_altman <- function(wright_measurements, miniwright_measurements) {
+  # Calculate metrics
+  mean_measurement <- (wright_measurements + miniwright_measurements) / 2
+  difference <- wright_measurements - miniwright_measurements
+  mean_difference <- mean(difference)
+  std_difference <- sd(difference)
+  
+  # Limits of agreement
+  lower_limit <- mean_difference - 1.96 * std_difference
+  upper_limit <- mean_difference + 1.96 * std_difference
+  
+  # Create a list to store the results
+  results <- list(
+    mean_measurement = mean_measurement,
+    difference = difference,
+    mean_difference = mean_difference,
+    lower_limit = lower_limit,
+    upper_limit = upper_limit
+  )
+  
+  return(results)
+}
 
